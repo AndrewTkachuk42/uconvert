@@ -9,12 +9,12 @@ import {
 export const UNIT_TO_CANONICAL: Record<Units, number> = {
   [MetricUnits.CM]: 1,
   [MetricUnits.M]: 100,
-  [ImperialUnits.IN]: 2.54, // exact (definition)
-  [ImperialUnits.FT]: 30.48, // exact (12 * 2.54)
+  [ImperialUnits.IN]: 2.54,
+  [ImperialUnits.FT]: 30.48,
   [MetricUnits.KG]: 1,
-  [ImperialUnits.LB]: 0.45359237, // exact (1 lb in kg)
+  [ImperialUnits.LB]: 0.45359237,
   [MetricUnits.KM_H]: 1,
-  [ImperialUnits.MPH]: 1.609344, // exact (1 mile = 1609.344 m)
+  [ImperialUnits.MPH]: 1.609344,
 };
 
 export const UNIT_DIMENSION: Record<Units, Dimension> = {
