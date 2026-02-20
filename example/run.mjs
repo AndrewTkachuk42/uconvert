@@ -41,6 +41,15 @@ console.log(
     roundTo: 2,
   }),
 );
+// FT_IN returns [feet, inches]
+console.log(
+  "convert(170, cm → FT_IN, roundTo: 1) =>",
+  convert(170, {
+    fromUnits: MetricUnits.CM,
+    toUnits: ImperialUnits.FT_IN,
+    roundTo: 1,
+  }),
+);
 
 // round(value, decimalPlaces) — use standalone for any number
 console.log("round(12.12312, 0) =>", round(12.12312, 0));
