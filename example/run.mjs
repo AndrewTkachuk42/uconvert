@@ -2,7 +2,7 @@
  * Example: run this to test the library (uses built dist).
  * From project root: npm run example
  */
-import { convert, MetricUnits, ImperialUnits, round } from "../dist/index.mjs";
+import { convert, ImperialUnits, MetricUnits, round } from "../dist/index.mjs";
 
 // convert(value, options) — value first, then { fromUnits, toUnits, roundTo? }
 console.log(
@@ -39,15 +39,6 @@ console.log(
     fromUnits: MetricUnits.KM_H,
     toUnits: ImperialUnits.MPH,
     roundTo: 2,
-  }),
-);
-// FT_IN returns [feet, inches]
-console.log(
-  "convert(170, cm → FT_IN, roundTo: 1) =>",
-  convert(170, {
-    fromUnits: MetricUnits.CM,
-    toUnits: ImperialUnits.FT_IN,
-    roundTo: 1,
   }),
 );
 
