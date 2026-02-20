@@ -9,14 +9,6 @@ export enum Dimension {
   SPEED = "speed",
 }
 
-export enum MeasurementType {
-  LENGTH = "length",
-  WEIGHT = "weight",
-  SPEED = "speed",
-  HEIGHT = "height",
-  LENGTH_FEET = "length_feet",
-}
-
 export enum MetricUnits {
   CM = "cm",
   M = "m",
