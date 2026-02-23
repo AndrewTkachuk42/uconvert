@@ -4,7 +4,6 @@ import {
   UNIT_TO_CANONICAL,
 } from "../../constants/conversion/conversion.constants";
 import strings from "../../constants/strings/strings";
-import { round } from "../math/math";
 import { formatMessage } from "../strings/strings.utils";
 import { ConvertOptions } from "./convert.types";
 
