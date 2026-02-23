@@ -19,7 +19,7 @@
     "example": "npm run build && node example/run.mjs",
     "example:cjs": "node example/run.cjs",
     "format": "prettier --write .",
-    "prepare": "husky",
+    "postinstall": "husky",
     "test": "jest"
   },
   "repository": {
