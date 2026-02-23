@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+# Colors for output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+# Get staged .ts, .tsx, .js, .jsx files
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx)$' || true)
+
+echo "${YELLOW}🔍 Formatting staged files with Prettier...${NC}"
+
+# Format staged files with Prettier
+if [ -n "$STAGED" ]; then
+  if ! echo "$STAGED" | xargs npx prettier --write; then
+    echo "${RED}❌ Prettier failed. Please fix the errors above.${NC}"
+    exit 1
+  fi
+  echo "$STAGED" | xargs git add
+fi
+
+echo "${YELLOW}🔍 Type-checking TypeScript...${NC}"
+
+# Run TypeScript check
+if ! npx tsc --noEmit; then
+  echo "${RED}❌ TypeScript check failed. Please fix the errors above.${NC}"
+  exit 1
+fi
+
+
+echo "${GREEN}✅ Prettier and type-check passed${NC}"
+exit 0
