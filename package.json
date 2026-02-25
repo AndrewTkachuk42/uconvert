@@ -12,7 +12,9 @@
       "require": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -26,7 +28,36 @@
     "type": "git",
     "url": "git+https://github.com/AndrewTkachuk42/uconvert.git"
   },
-  "keywords": [],
+  "keywords": [
+    "unit-conversion",
+    "unit-converter",
+    "convert-units",
+    "measurement",
+    "measurements",
+    "unit-system",
+    "metric",
+    "imperial",
+    "si-units",
+    "length",
+    "distance",
+    "height",
+    "weight",
+    "mass",
+    "speed",
+    "feet",
+    "inches",
+    "feet-inches",
+    "centimeters",
+    "meters",
+    "kilometers",
+    "miles",
+    "typescript",
+    "javascript",
+    "utility",
+    "math",
+    "precision",
+    "cross-units"
+  ],
   "author": "",
   "license": "MIT",
   "type": "commonjs",
