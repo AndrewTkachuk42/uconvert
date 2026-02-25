@@ -77,6 +77,43 @@ Use these with `convert` for type-safe unit arguments:
 
 `fromUnits` and `toUnits` must use the same dimension (e.g. both length, or both weight); otherwise `convert` throws.
 
+## Supported units
+
+Units are grouped by dimension. Use the **Code** value with `convert()`.
+
+### Length
+
+| Unit | Code | System |
+|------|------|--------|
+| mm | `MetricUnits.MM` | Metric |
+| cm | `MetricUnits.CM` | Metric |
+| m | `MetricUnits.M` | Metric |
+| km | `MetricUnits.KM` | Metric |
+| in | `ImperialUnits.IN` | Imperial |
+| ft | `ImperialUnits.FT` | Imperial |
+| yd | `ImperialUnits.YD` | Imperial |
+| mi | `ImperialUnits.MI` | Imperial |
+
+### Weight
+
+| Unit | Code | System |
+|------|------|--------|
+| g | `MetricUnits.G` | Metric |
+| kg | `MetricUnits.KG` | Metric |
+| t | `MetricUnits.TONNE` | Metric |
+| oz | `ImperialUnits.OZ` | Imperial |
+| lb | `ImperialUnits.LB` | Imperial |
+| st | `ImperialUnits.ST` | Imperial |
+
+### Speed
+
+| Unit | Code | System |
+|------|------|--------|
+| m/s | `MetricUnits.M_S` | Metric |
+| km/h | `MetricUnits.KM_H` | Metric |
+| ft/s | `ImperialUnits.FT_S` | Imperial |
+| mph | `ImperialUnits.MPH` | Imperial |
+
 ---
 
 ## Height utility
