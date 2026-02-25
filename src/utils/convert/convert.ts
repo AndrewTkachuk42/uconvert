@@ -1,14 +1,16 @@
-import { round } from "../math/math";
+import temperatureUtils from "../temperature/temperature.utils";
 import { ConvertOptions } from "./convert.types";
 import utils from "./convert.utils";
 
-const { getFactor } = utils;
+const { convertDefault, ensureSameDimension } = utils;
+const { isTemperature, convertTemperature } = temperatureUtils;
 
-export const convert = (
-  value: number,
-  { fromUnits, toUnits, roundTo }: ConvertOptions,
-) => {
-  const factor = getFactor(fromUnits, toUnits);
+export const convert = (value: number, options: ConvertOptions) => {
+  ensureSameDimension(options);
 
-  return round(value * factor, roundTo);
+  if (isTemperature(options)) {
+    return convertTemperature(value, options);
+  }
+
+  return convertDefault(value, options);
 };

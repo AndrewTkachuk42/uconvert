@@ -70,10 +70,10 @@ Use these with `convert` for type-safe unit arguments:
 |--------|-------------|
 | `ConvertOptions` | Options object for `convert`: `{ fromUnits, toUnits, roundTo? }`. |
 | `Units` | Union type: `MetricUnits \| ImperialUnits`. |
-| `MetricUnits` | Enum: `MM`, `CM`, `M`, `KM`, `G`, `KG`, `TONNE`, `M_S`, `KM_H`. |
-| `ImperialUnits` | Enum: `IN`, `FT`, `YD`, `MI`, `OZ`, `LB`, `ST`, `FT_S`, `MPH`. |
+| `MetricUnits` | Enum: `MM`, `CM`, `M`, `KM`, `G`, `KG`, `TONNE`, `CELSIUS`, `KELVIN`, `M_S`, `KM_H`. |
+| `ImperialUnits` | Enum: `IN`, `FT`, `YD`, `MI`, `OZ`, `LB`, `ST`, `FAHRENHEIT`, `FT_S`, `MPH`. |
 | `UnitSystem` | Enum: `METRIC`, `IMPERIAL`. |
-| `Dimension` | Enum: `LENGTH`, `WEIGHT`, `SPEED`. |
+| `Dimension` | Enum: `LENGTH`, `WEIGHT`, `SPEED`, `TEMPERATURE`. |
 
 `fromUnits` and `toUnits` must use the same dimension (e.g. both length, or both weight); otherwise `convert` throws.
 
@@ -113,6 +113,14 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 | km/h | `MetricUnits.KM_H` | Metric |
 | ft/s | `ImperialUnits.FT_S` | Imperial |
 | mph | `ImperialUnits.MPH` | Imperial |
+
+### Temperature
+
+| Unit | Code | System |
+|------|------|--------|
+| °C (C) | `MetricUnits.CELSIUS` | Metric |
+| K | `MetricUnits.KELVIN` | Metric |
+| °F (F) | `ImperialUnits.FAHRENHEIT` | Imperial |
 
 ---
 
