@@ -2,13 +2,22 @@
 
 Lightweight utility for converting common measurement units.
 
+
+
+
 ## Installation
 
 ```bash
 npm install uconvert
 ```
 
+
+
+
 ## Usage
+
+
+
 
 ### `convert(value, options)`
 
@@ -42,6 +51,9 @@ convert(100, { fromUnits: MetricUnits.CM, toUnits: MetricUnits.CM });
 // => 100
 ```
 
+
+
+
 ### `round(value, decimalPlaces?)`
 
 Rounds a number to a given number of decimal places.
@@ -62,9 +74,15 @@ round(1.2345, 2); // => 1.23
 round(1.2345); // => 1.2345
 ```
 
+
+
+
 ## Supported units
 
 Units are grouped by dimension. Use the **Code** value with `convert()`.
+
+
+
 
 ### Length
 
@@ -79,6 +97,9 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 | yd   | `ImperialUnits.YD` | Imperial |
 | mi   | `ImperialUnits.MI` | Imperial |
 
+
+
+
 ### Weight
 
 | Unit | Code                | System   |
@@ -90,6 +111,9 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 | lb   | `ImperialUnits.LB`  | Imperial |
 | st   | `ImperialUnits.ST`  | Imperial |
 
+
+
+
 ### Speed
 
 | Unit | Code                 | System   |
@@ -99,6 +123,9 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 | ft/s | `ImperialUnits.FT_S` | Imperial |
 | mph  | `ImperialUnits.MPH`  | Imperial |
 
+
+
+
 ### Temperature
 
 | Unit   | Code                       | System   |
@@ -106,6 +133,9 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 | °C (C) | `MetricUnits.CELSIUS`      | Metric   |
 | K      | `MetricUnits.KELVIN`       | Metric   |
 | °F (F) | `ImperialUnits.FAHRENHEIT` | Imperial |
+
+
+
 
 ## Exported types and enums
 
@@ -124,6 +154,9 @@ Use these with `convert` for type-safe unit arguments:
 
 ---
 
+
+
+
 ## Height utility
 
 The `height` object provides helpers for converting between centimeters and feet–inches and for parsing feet–inches strings.
@@ -133,6 +166,9 @@ The `height` object provides helpers for converting between centimeters and feet
 ```ts
 import { height } from "uconvert";
 ```
+
+
+
 
 ### `height.toFeetInches(valueInCm, roundTo?)`
 
@@ -152,6 +188,9 @@ height.toFeetInches(170); // => [5, 6.93...]
 height.toFeetInches(170, 1); // => [5, 6.9]
 ```
 
+
+
+
 ### `height.toCentimeters(feetInches)`
 
 Converts a feet–inches tuple to centimeters.
@@ -167,6 +206,9 @@ Converts a feet–inches tuple to centimeters.
 ```ts
 height.toCentimeters([5, 10]); // => 177.8
 ```
+
+
+
 
 ### `height.parseFeetInches(input)`
 
@@ -185,6 +227,9 @@ height.parseFeetInches("5 ft 10 in"); // => [5, 10]
 height.parseFeetInches("5'10\""); // => [5, 10]
 height.parseFeetInches("6 2"); // => [6, 2]
 ```
+
+
+
 
 ### `FeetInches` type
 
