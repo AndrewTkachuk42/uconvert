@@ -1,6 +1,6 @@
 # uconvert
 
-Unit conversion utilities.
+Lightweight utility for converting common measurement units.
 
 ## Installation
 
@@ -59,23 +59,8 @@ Rounds a number to a given number of decimal places.
 import { round } from "uconvert";
 
 round(1.2345, 2); // => 1.23
-round(1.2345);    // => 1.2345
+round(1.2345); // => 1.2345
 ```
-
-## Exported types and enums
-
-Use these with `convert` for type-safe unit arguments:
-
-| Export | Description |
-|--------|-------------|
-| `ConvertOptions` | Options object for `convert`: `{ fromUnits, toUnits, roundTo? }`. |
-| `Units` | Union type: `MetricUnits \| ImperialUnits`. |
-| `MetricUnits` | Enum: `MM`, `CM`, `M`, `KM`, `G`, `KG`, `TONNE`, `CELSIUS`, `KELVIN`, `M_S`, `KM_H`. |
-| `ImperialUnits` | Enum: `IN`, `FT`, `YD`, `MI`, `OZ`, `LB`, `ST`, `FAHRENHEIT`, `FT_S`, `MPH`. |
-| `UnitSystem` | Enum: `METRIC`, `IMPERIAL`. |
-| `Dimension` | Enum: `LENGTH`, `WEIGHT`, `SPEED`, `TEMPERATURE`. |
-
-`fromUnits` and `toUnits` must use the same dimension (e.g. both length, or both weight); otherwise `convert` throws.
 
 ## Supported units
 
@@ -83,44 +68,59 @@ Units are grouped by dimension. Use the **Code** value with `convert()`.
 
 ### Length
 
-| Unit | Code | System |
-|------|------|--------|
-| mm | `MetricUnits.MM` | Metric |
-| cm | `MetricUnits.CM` | Metric |
-| m | `MetricUnits.M` | Metric |
-| km | `MetricUnits.KM` | Metric |
-| in | `ImperialUnits.IN` | Imperial |
-| ft | `ImperialUnits.FT` | Imperial |
-| yd | `ImperialUnits.YD` | Imperial |
-| mi | `ImperialUnits.MI` | Imperial |
+| Unit | Code               | System   |
+| ---- | ------------------ | -------- |
+| mm   | `MetricUnits.MM`   | Metric   |
+| cm   | `MetricUnits.CM`   | Metric   |
+| m    | `MetricUnits.M`    | Metric   |
+| km   | `MetricUnits.KM`   | Metric   |
+| in   | `ImperialUnits.IN` | Imperial |
+| ft   | `ImperialUnits.FT` | Imperial |
+| yd   | `ImperialUnits.YD` | Imperial |
+| mi   | `ImperialUnits.MI` | Imperial |
 
 ### Weight
 
-| Unit | Code | System |
-|------|------|--------|
-| g | `MetricUnits.G` | Metric |
-| kg | `MetricUnits.KG` | Metric |
-| t | `MetricUnits.TONNE` | Metric |
-| oz | `ImperialUnits.OZ` | Imperial |
-| lb | `ImperialUnits.LB` | Imperial |
-| st | `ImperialUnits.ST` | Imperial |
+| Unit | Code                | System   |
+| ---- | ------------------- | -------- |
+| g    | `MetricUnits.G`     | Metric   |
+| kg   | `MetricUnits.KG`    | Metric   |
+| t    | `MetricUnits.TONNE` | Metric   |
+| oz   | `ImperialUnits.OZ`  | Imperial |
+| lb   | `ImperialUnits.LB`  | Imperial |
+| st   | `ImperialUnits.ST`  | Imperial |
 
 ### Speed
 
-| Unit | Code | System |
-|------|------|--------|
-| m/s | `MetricUnits.M_S` | Metric |
-| km/h | `MetricUnits.KM_H` | Metric |
+| Unit | Code                 | System   |
+| ---- | -------------------- | -------- |
+| m/s  | `MetricUnits.M_S`    | Metric   |
+| km/h | `MetricUnits.KM_H`   | Metric   |
 | ft/s | `ImperialUnits.FT_S` | Imperial |
-| mph | `ImperialUnits.MPH` | Imperial |
+| mph  | `ImperialUnits.MPH`  | Imperial |
 
 ### Temperature
 
-| Unit | Code | System |
-|------|------|--------|
-| °C (C) | `MetricUnits.CELSIUS` | Metric |
-| K | `MetricUnits.KELVIN` | Metric |
+| Unit   | Code                       | System   |
+| ------ | -------------------------- | -------- |
+| °C (C) | `MetricUnits.CELSIUS`      | Metric   |
+| K      | `MetricUnits.KELVIN`       | Metric   |
 | °F (F) | `ImperialUnits.FAHRENHEIT` | Imperial |
+
+## Exported types and enums
+
+Use these with `convert` for type-safe unit arguments:
+
+| Export           | Description                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| `ConvertOptions` | Options object for `convert`: `{ fromUnits, toUnits, roundTo? }`.                    |
+| `Units`          | Union type: `MetricUnits \| ImperialUnits`.                                          |
+| `MetricUnits`    | Enum: `MM`, `CM`, `M`, `KM`, `G`, `KG`, `TONNE`, `CELSIUS`, `KELVIN`, `M_S`, `KM_H`. |
+| `ImperialUnits`  | Enum: `IN`, `FT`, `YD`, `MI`, `OZ`, `LB`, `ST`, `FAHRENHEIT`, `FT_S`, `MPH`.         |
+| `UnitSystem`     | Enum: `METRIC`, `IMPERIAL`.                                                          |
+| `Dimension`      | Enum: `LENGTH`, `WEIGHT`, `SPEED`, `TEMPERATURE`.                                    |
+
+`fromUnits` and `toUnits` must use the same dimension (e.g. both length, or both weight); otherwise `convert` throws.
 
 ---
 
@@ -148,8 +148,8 @@ Converts a height in centimeters to feet and inches.
 **Example:**
 
 ```ts
-height.toFeetInches(170);      // => [5, 6.93...]
-height.toFeetInches(170, 1);   // => [5, 6.9]
+height.toFeetInches(170); // => [5, 6.93...]
+height.toFeetInches(170, 1); // => [5, 6.9]
 ```
 
 ### `height.toCentimeters(feetInches)`
@@ -165,7 +165,7 @@ Converts a feet–inches tuple to centimeters.
 **Example:**
 
 ```ts
-height.toCentimeters([5, 10]);  // => 177.8
+height.toCentimeters([5, 10]); // => 177.8
 ```
 
 ### `height.parseFeetInches(input)`
@@ -181,9 +181,9 @@ Parses a string into a `[feet, inches]` tuple. Accepts formats like `"5 ft 10 in
 **Example:**
 
 ```ts
-height.parseFeetInches("5 ft 10 in");  // => [5, 10]
-height.parseFeetInches("5'10\"");      // => [5, 10]
-height.parseFeetInches("6 2");         // => [6, 2]
+height.parseFeetInches("5 ft 10 in"); // => [5, 10]
+height.parseFeetInches("5'10\""); // => [5, 10]
+height.parseFeetInches("6 2"); // => [6, 2]
 ```
 
 ### `FeetInches` type
