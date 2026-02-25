@@ -70,8 +70,8 @@ Use these with `convert` for type-safe unit arguments:
 |--------|-------------|
 | `ConvertOptions` | Options object for `convert`: `{ fromUnits, toUnits, roundTo? }`. |
 | `Units` | Union type: `MetricUnits \| ImperialUnits`. |
-| `MetricUnits` | Enum: `CM`, `M`, `KG`, `KM_H`. |
-| `ImperialUnits` | Enum: `IN`, `FT`, `LB`, `MPH`. |
+| `MetricUnits` | Enum: `MM`, `CM`, `M`, `KM`, `G`, `KG`, `TONNE`, `M_S`, `KM_H`. |
+| `ImperialUnits` | Enum: `IN`, `FT`, `YD`, `MI`, `OZ`, `LB`, `ST`, `FT_S`, `MPH`. |
 | `UnitSystem` | Enum: `METRIC`, `IMPERIAL`. |
 | `Dimension` | Enum: `LENGTH`, `WEIGHT`, `SPEED`. |
 

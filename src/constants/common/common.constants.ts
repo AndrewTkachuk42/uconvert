@@ -14,7 +14,10 @@ export enum MetricUnits {
   CM = "cm",
   M = "m",
   KM = "km",
+  G = "g",
   KG = "kg",
+  TONNE = "t",
+  M_S = "m/s",
   KM_H = "km/h",
 }
 
@@ -23,7 +26,10 @@ export enum ImperialUnits {
   FT = "ft",
   YD = "yd",
   MI = "mi",
+  OZ = "oz",
   LB = "lb",
+  ST = "st",
+  FT_S = "ft/s",
   MPH = "mph",
 }
 
