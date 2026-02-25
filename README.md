@@ -2,8 +2,27 @@
 
 Lightweight utility for converting common measurement units.
 
+<br />
 
+## Table of contents
 
+- [Installation](#installation)
+- [Usage](#usage)
+  - [`convert(value, options)`](#convertvalue-options)
+  - [`round(value, decimalPlaces?)`](#roundvalue-decimalplaces)
+- [Exported types and enums](#exported-types-and-enums)
+- [Supported units](#supported-units)
+  - [Length](#length)
+  - [Weight](#weight)
+  - [Speed](#speed)
+  - [Temperature](#temperature)
+- [Height utility](#height-utility)
+  - [`height.toFeetInches(valueInCm, roundTo?)`](#heighttofeetinchesvalueincm-roundto)
+  - [`height.toCentimeters(feetInches)`](#heighttocentimetersfeetinches)
+  - [`height.parseFeetInches(input)`](#heightparsefeetinchesinput)
+  - [`FeetInches` type](#feetinches-type)
+
+<br />
 
 ## Installation
 
@@ -11,13 +30,11 @@ Lightweight utility for converting common measurement units.
 npm install uconvert
 ```
 
-
-
+<br />
 
 ## Usage
 
-
-
+<br />
 
 ### `convert(value, options)`
 
@@ -51,8 +68,7 @@ convert(100, { fromUnits: MetricUnits.CM, toUnits: MetricUnits.CM });
 // => 100
 ```
 
-
-
+<br />
 
 ### `round(value, decimalPlaces?)`
 
@@ -74,68 +90,7 @@ round(1.2345, 2); // => 1.23
 round(1.2345); // => 1.2345
 ```
 
-
-
-
-## Supported units
-
-Units are grouped by dimension. Use the **Code** value with `convert()`.
-
-
-
-
-### Length
-
-| Unit | Code               | System   |
-| ---- | ------------------ | -------- |
-| mm   | `MetricUnits.MM`   | Metric   |
-| cm   | `MetricUnits.CM`   | Metric   |
-| m    | `MetricUnits.M`    | Metric   |
-| km   | `MetricUnits.KM`   | Metric   |
-| in   | `ImperialUnits.IN` | Imperial |
-| ft   | `ImperialUnits.FT` | Imperial |
-| yd   | `ImperialUnits.YD` | Imperial |
-| mi   | `ImperialUnits.MI` | Imperial |
-
-
-
-
-### Weight
-
-| Unit | Code                | System   |
-| ---- | ------------------- | -------- |
-| g    | `MetricUnits.G`     | Metric   |
-| kg   | `MetricUnits.KG`    | Metric   |
-| t    | `MetricUnits.TONNE` | Metric   |
-| oz   | `ImperialUnits.OZ`  | Imperial |
-| lb   | `ImperialUnits.LB`  | Imperial |
-| st   | `ImperialUnits.ST`  | Imperial |
-
-
-
-
-### Speed
-
-| Unit | Code                 | System   |
-| ---- | -------------------- | -------- |
-| m/s  | `MetricUnits.M_S`    | Metric   |
-| km/h | `MetricUnits.KM_H`   | Metric   |
-| ft/s | `ImperialUnits.FT_S` | Imperial |
-| mph  | `ImperialUnits.MPH`  | Imperial |
-
-
-
-
-### Temperature
-
-| Unit   | Code                       | System   |
-| ------ | -------------------------- | -------- |
-| °C (C) | `MetricUnits.CELSIUS`      | Metric   |
-| K      | `MetricUnits.KELVIN`       | Metric   |
-| °F (F) | `ImperialUnits.FAHRENHEIT` | Imperial |
-
-
-
+<br />
 
 ## Exported types and enums
 
@@ -154,7 +109,69 @@ Use these with `convert` for type-safe unit arguments:
 
 ---
 
+<br />
 
+## Supported units
+
+Units are grouped by dimension. Use the **Code** value with `convert()`.
+
+<br />
+
+### Length
+
+| Unit | Code               | System   |
+| ---- | ------------------ | -------- |
+| mm   | `MetricUnits.MM`   | Metric   |
+| cm   | `MetricUnits.CM`   | Metric   |
+| m    | `MetricUnits.M`    | Metric   |
+| km   | `MetricUnits.KM`   | Metric   |
+| in   | `ImperialUnits.IN` | Imperial |
+| ft   | `ImperialUnits.FT` | Imperial |
+| yd   | `ImperialUnits.YD` | Imperial |
+| mi   | `ImperialUnits.MI` | Imperial |
+
+<br />
+
+### Weight
+
+| Unit | Code                | System   |
+| ---- | ------------------- | -------- |
+| g    | `MetricUnits.G`     | Metric   |
+| kg   | `MetricUnits.KG`    | Metric   |
+| t    | `MetricUnits.TONNE` | Metric   |
+| oz   | `ImperialUnits.OZ`  | Imperial |
+| lb   | `ImperialUnits.LB`  | Imperial |
+| st   | `ImperialUnits.ST`  | Imperial |
+
+<br />
+
+### Speed
+
+| Unit | Code                 | System   |
+| ---- | -------------------- | -------- |
+| m/s  | `MetricUnits.M_S`    | Metric   |
+| km/h | `MetricUnits.KM_H`   | Metric   |
+| ft/s | `ImperialUnits.FT_S` | Imperial |
+| mph  | `ImperialUnits.MPH`  | Imperial |
+
+<br />
+
+### Temperature
+
+| Unit   | Code                       | System   |
+| ------ | -------------------------- | -------- |
+| °C (C) | `MetricUnits.CELSIUS`      | Metric   |
+| K      | `MetricUnits.KELVIN`       | Metric   |
+| °F (F) | `ImperialUnits.FAHRENHEIT` | Imperial |
+
+
+
+
+<br />
+
+---
+
+<br />
 
 
 ## Height utility
@@ -167,8 +184,7 @@ The `height` object provides helpers for converting between centimeters and feet
 import { height } from "uconvert";
 ```
 
-
-
+<br />
 
 ### `height.toFeetInches(valueInCm, roundTo?)`
 
@@ -188,8 +204,7 @@ height.toFeetInches(170); // => [5, 6.93...]
 height.toFeetInches(170, 1); // => [5, 6.9]
 ```
 
-
-
+<br />
 
 ### `height.toCentimeters(feetInches)`
 
@@ -207,8 +222,7 @@ Converts a feet–inches tuple to centimeters.
 height.toCentimeters([5, 10]); // => 177.8
 ```
 
-
-
+<br />
 
 ### `height.parseFeetInches(input)`
 
@@ -228,8 +242,7 @@ height.parseFeetInches("5'10\""); // => [5, 10]
 height.parseFeetInches("6 2"); // => [6, 2]
 ```
 
-
-
+<br />
 
 ### `FeetInches` type
 
