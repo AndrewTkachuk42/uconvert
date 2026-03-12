@@ -1,7 +1,7 @@
 {
   "name": "uconvert",
-  "version": "0.1.5",
-  "description": "",
+  "version": "0.1.6",
+  "description": "A lightweight TypeScript utility to convert measurements between unit systems like metric and imperial.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -58,7 +58,7 @@
     "precision",
     "cross-units"
   ],
-  "author": "",
+  "author": "Andrii Tkachuk",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
